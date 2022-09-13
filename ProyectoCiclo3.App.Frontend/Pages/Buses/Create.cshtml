@@ -1,0 +1,23 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormBusesModel
+@{
+}
+
+<div class="text-center">
+    <form method = "POST">
+        <label for="marca" class = "form-label">Marca:</label>
+        <input type="text" class="form-control" required placeholder="Marca" minlength="3" asp-for="Bus.marca">
+        <span class="text-danger" asp-validation-for="Bus.marca"></span> <br>
+        <label for="modelo" class="form-label">Modelo:</label>
+        <input type="number" class="form-control" required placeholder="Modelo" asp-for="Bus.modelo" step="any">
+        <label for="kilometraje" class="form-label">Kilometraje:</label>
+        <input type="number" class="form-control" required placeholder="Kilometraje" asp-for="Bus.kilometraje" step="any">
+        <label for="numero_asientos" class="form-label">Numero de Asientos:</label>
+        <input type="number" class="form-control" required placeholder="Numero de Asientos" asp-for="Bus.numero_asientos" step="any">
+        <label for="placa" class="form-label">Placa:</label>
+        <input type="text" class="form-control" required placeholder="Placa" asp-for="Bus.placa" step="any">
+
+        <hr>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>
