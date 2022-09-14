@@ -20,7 +20,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         }
 
         public Estaciones Update(Estaciones newEstacion){
-            var estacion = _appContext.Estaciones.Find(newEstacion.id);;
+            var estacion = _appContext.Estaciones.Find(newEstacion.id);
             if(estacion != null){
                 estacion.nombre = newEstacion.nombre;
                 estacion.direccion = newEstacion.direccion;
