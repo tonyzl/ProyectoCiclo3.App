@@ -11,22 +11,21 @@ namespace ProyectoCiclo3.App.Frontend.Pages
 {
     public class EditBusModel : PageModel
     {
-
-       private readonly RepositorioBuses repositorioBuses;
-       [BindProperty]
-       public Buses Bus {get;set;}
+        private readonly RepositorioBuses repositorioBuses;
+        [BindProperty]
+        public Dominio.Buses Bus {get;set;}
  
         public EditBusModel(RepositorioBuses repositorioBuses)
-       {
+        {
             this.repositorioBuses=repositorioBuses;
-       }
- 
+        }  
+
         public IActionResult OnGet(int busId)
         {
             Bus=repositorioBuses.GetWithId(busId);
             return Page();
         }
-
+ 
         public IActionResult OnPost()
         {
             if(!ModelState.IsValid)
@@ -37,8 +36,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
             {
              Bus = repositorioBuses.Update(Bus);
             }
-            return RedirectToPage("./List");
+            return RedirectToPage("List");
         }
-
     }
 }
